@@ -8,10 +8,10 @@
 		<version>3.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ptk</groupId>
-	<artifactId>RecipeScraper</artifactId>
+	<groupId>com</groupId>
+	<artifactId>recipescraper</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ptk</name>
+	<name>recipescraper</name>
 	<description>Recipe Scraper Rest API</description>
 	<properties>
 		<java.version>17</java.version>
@@ -30,6 +30,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>5.3.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
