@@ -42,7 +42,6 @@ public class Main {
     if (jsonMap == null) {
       return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
     }
-    //  return new ResponseEntity<>(findRecipe(jsonMap), HttpStatus.CREATED);
     Recipe recipe = findRecipe(jsonMap);
     return ResponseEntity.ok(ScrapeResponse.builder().recipe(recipe).build());
   }
@@ -122,7 +121,7 @@ public class Main {
       } else {
         recipeJsonStartIndex =
             json.indexOf(context, recipeJsonStartIndex + distance + spaces)
-                + 1; // changed from context to jsonIdentifier
+                + 1;
         distance = 0;
         spaces = 0;
         usingHttp = false;
@@ -147,19 +146,13 @@ public class Main {
       inAnEscape = json.charAt(i) == '\\';
       i++;
     }
-    return json.substring(0, i); // I want i+1, so I use the final postincrement and say i
+    return json.substring(0, i);
   }
 
   private Recipe findRecipe(Map<String, Object> jsonMap) {
     Object ingredients = findRecipe("recipeIngredient", jsonMap);
     Object instructions = findRecipe("recipeInstructions", jsonMap);
     return Recipe.builder().ingredients(ingredients).instructions(instructions).build();
-    //    JSONObject json= new JSONObject()
-    //            .put("recipe",new JSONObject()
-    //            .put("instructions", instructions)
-    //            .put("ingredients",  ingredients));
-
-    // return json.toString(4);
   }
 
   private JSONArray makeJsonArray(Object data) {
