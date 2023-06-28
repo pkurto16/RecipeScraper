@@ -1,5 +1,6 @@
-package com.recipescraper.model;
+package com.recipescraper.model.wire;
 
+import com.recipescraper.model.Recipe;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.jackson.Jacksonized;

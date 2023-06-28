@@ -1,7 +1,7 @@
 package com.recipescraper.ptk;
 
 import com.recipescraper.Application;
-import com.recipescraper.model.ScrapeRequest;
+import com.recipescraper.model.wire.ScrapeRequest;
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
